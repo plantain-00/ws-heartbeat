@@ -25,7 +25,7 @@ options:
 
 ```ts
 setWsHeartbeat(ws, '{"kind":"ping"}', {
-    pingTimeout: 60000, // if no message accepted from server, close the connection.
+    pingTimeout: 60000, // in 60 seconds, if no message accepted from server, close the connection.
     pingInterval: 25000, // every 25 seconds, send a ping message to the server.
 });
 ```
@@ -33,7 +33,7 @@ setWsHeartbeat(ws, '{"kind":"ping"}', {
 #### server-side usage
 
 ```ts
-import { setWsHeartbeat } from "./server";
+import { setWsHeartbeat } from "ws-heartbeat/server";
 import * as WebSocket from "ws";
 
 const wss = new WebSocket.Server();
@@ -52,5 +52,5 @@ setWsHeartbeat(wss, (ws, data, flag) => {
     if (data === '{"kind":"ping"}') {
         ws.emit('{"kind":"pong"}');
     }
-}, 60000); // if no message accepted from client, close the connection.
+}, 60000); // in 60 seconds, if no message accepted from client, close the connection.
 ```
