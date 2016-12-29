@@ -1,7 +1,7 @@
 {
   "name": "ws-heartbeat",
-  "version": "1.0.2",
-  "description": "A javascript library for browser or nodejs client reconnection.",
+  "version": "1.0.3",
+  "description": "Server-side and client-side heartbeat library for ws and browser-side Websocket.",
   "main": "index.js",
   "scripts": {
     "build": "tsc",

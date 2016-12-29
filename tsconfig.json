@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es6",
+        "target": "es5",
         "module": "commonjs",
         "noImplicitAny": true,
         "noUnusedLocals": true,
@@ -8,6 +8,11 @@
         "strictNullChecks": true,
         "noImplicitReturns": true,
         "skipLibCheck": true,
-        "declaration": true
+        "declaration": true,
+        "lib": [
+            "es2015.collection",
+            "dom",
+            "es5"
+        ]
     }
 }

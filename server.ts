@@ -1,20 +1,7 @@
-export interface WebSocketServerBase {
-    addListener: (name: "connection", listener: (ws: WebSocketBase) => void) => void;
-    clients: WebSocketBase[];
-}
+import { WebSocket } from "./types";
 
-export interface WebSocketBase {
-    readyState: number;
-    CONNECTING: number;
-    OPEN: number;
-    addListener: (name: "message", listener: (data: any, flag: { binary: boolean }) => void) => void;
-    close(): void;
-    emit(event: string, callback: Function): void;
-    send(data: any): void;
-}
-
-export function setWsHeartbeat(wss: WebSocketServerBase, pong: (ws: WebSocketBase, data: any, binary: boolean) => void, pingTimeout: number = 60000) {
-    const connections = new Set<WebSocketBase>();
+export function setWsHeartbeat(wss: WebSocket.Server, pong: (ws: WebSocket, data: any, binary: boolean) => void, pingTimeout: number = 60000) {
+    const connections = new Set<WebSocket>();
     wss.addListener("connection", ws => {
         connections.add(ws);
         ws.addListener("message", (data, flag) => {
