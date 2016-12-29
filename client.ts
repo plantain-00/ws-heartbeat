@@ -6,7 +6,7 @@ export type WsHeartbeatOption = Partial<{
 export interface WebSocketBase {
     close: () => void;
     send: (data: any) => void;
-    addEventListener: (name: "message" | "close", data: (e: any) => void) => void;
+    addEventListener: (name: "message" | "close", listener: (e: any) => void) => void;
 }
 
 export function setWsHeartbeat(ws: WebSocketBase, pingMessage: string, option?: WsHeartbeatOption) {
