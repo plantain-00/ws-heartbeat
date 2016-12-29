@@ -1,0 +1,26 @@
+{
+  "name": "ws-heartbeat",
+  "version": "1.0.0",
+  "description": "A javascript library for browser or nodejs client reconnection.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint \"*.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plantain-00/ws-heartbeat.git"
+  },
+  "author": "York Yao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/plantain-00/ws-heartbeat/issues"
+  },
+  "homepage": "https://github.com/plantain-00/ws-heartbeat#readme",
+  "devDependencies": {
+    "@types/node": "6.0.54",
+    "@types/ws": "0.0.37",
+    "tslint": "4.2.0",
+    "typescript": "2.1.4"
+  }
+}
