@@ -40,7 +40,7 @@ const wss = new WebSocket.Server();
 
 setWsHeartbeat(wss, (ws, data, binary) => {
     if (data === '{"kind":"ping"}') { // send pong if recieved a ping.
-        ws.emit('{"kind":"pong"}');
+        ws.send('{"kind":"pong"}');
     }
 });
 ```
@@ -50,7 +50,7 @@ options:
 ```ts
 setWsHeartbeat(wss, (ws, data, flag) => {
     if (data === '{"kind":"ping"}') {
-        ws.emit('{"kind":"pong"}');
+        ws.send('{"kind":"pong"}');
     }
 }, 60000); // in 60 seconds, if no message accepted from client, close the connection.
 ```

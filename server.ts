@@ -9,7 +9,8 @@ export interface WebSocketBase {
     OPEN: number;
     addListener: (name: "message", listener: (data: any, flag: { binary: boolean }) => void) => void;
     close(): void;
-    emit(data: any): void;
+    emit(event: string, callback: Function): void;
+    send(data: any): void;
 }
 
 export function setWsHeartbeat(wss: WebSocketServerBase, pong: (ws: WebSocketBase, data: any, binary: boolean) => void, pingTimeout: number = 60000) {
