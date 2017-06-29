@@ -1,6 +1,6 @@
 {
   "name": "ws-heartbeat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Server-side and client-side heartbeat library for ws and browser-side Websocket.",
   "main": "index.js",
   "scripts": {
@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/plantain-00/ws-heartbeat#readme",
   "devDependencies": {
-    "@types/node": "6.0.54",
-    "@types/ws": "0.0.37",
-    "tslint": "4.2.0",
-    "typescript": "2.1.4"
+    "@types/node": "^8.0.6",
+    "@types/ws": "^3.0.0",
+    "tslint": "^5.4.3",
+    "typescript": "^2.4.1"
   }
 }

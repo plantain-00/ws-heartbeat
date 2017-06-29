@@ -3,11 +3,11 @@ export type WsHeartbeatOption = Partial<{
     pingTimeout: number;
 }>;
 
-export interface WebSocketBase {
+export type WebSocketBase = {
     close: () => void;
     send: (data: any) => void;
     addEventListener: (name: "message" | "close", listener: (e: any) => void) => void;
-}
+};
 
 export function setWsHeartbeat(ws: WebSocketBase, pingMessage: string, option?: WsHeartbeatOption) {
     let pingInterval = 25000;
@@ -24,10 +24,10 @@ export function setWsHeartbeat(ws: WebSocketBase, pingMessage: string, option?: 
     ws.addEventListener("message", (e: any) => {
         messageAccepted = true;
     });
-    let pingTimer = setInterval(() => {
+    const pingTimer = setInterval(() => {
         ws.send(pingMessage);
     }, pingInterval);
-    let timeoutTimer = setInterval(() => {
+    const timeoutTimer = setInterval(() => {
         if (!messageAccepted) {
             ws.close();
         } else {
