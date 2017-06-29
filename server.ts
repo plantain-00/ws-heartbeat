@@ -6,7 +6,7 @@ export function setWsHeartbeat(wss: WebSocket.Server, pong: (ws: WebSocket, data
         connections.add(ws);
         ws.addListener("message", (data, flag) => {
             connections.add(ws);
-            pong(ws, data, flag.binary);
+            pong(ws, data, flag ? flag.binary : false);
         });
     });
     setInterval(() => {
