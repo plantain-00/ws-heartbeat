@@ -25,7 +25,11 @@ export function setWsHeartbeat(ws: WebSocketBase, pingMessage: string, option?: 
         messageAccepted = true;
     });
     const pingTimer = setInterval(() => {
-        ws.send(pingMessage);
+        try {
+            ws.send(pingMessage);
+        } catch (_) {
+            // do nothing
+        }
     }, pingInterval);
     const timeoutTimer = setInterval(() => {
         if (!messageAccepted) {
