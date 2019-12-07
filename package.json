@@ -21,7 +21,7 @@
     "@types/node": "12.12.14",
     "@types/ws": "6.0.4",
     "tslint": "5.20.1",
-    "typescript": "3.7.2"
+    "typescript": "3.7.3"
   },
   "dependencies": {
     "ws": "7"
