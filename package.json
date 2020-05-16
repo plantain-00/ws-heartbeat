@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/plantain-00/ws-heartbeat#readme",
   "devDependencies": {
-    "@types/node": "13.13.5",
+    "@types/node": "14.0.1",
     "@types/ws": "7.2.4",
     "tslint": "6.1.2",
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   },
   "dependencies": {
     "ws": "7"
