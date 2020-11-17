@@ -9,7 +9,7 @@ export function setWsHeartbeat(wss: WebSocket.Server, pong: (ws: WebSocket, data
             pong(ws, data, typeof data !== "string");
         });
     });
-    setInterval(() => {
+    const handle = setInterval(() => {
         for (const ws of wss.clients) {
             if (ws.readyState === ws.CONNECTING || ws.readyState === ws.OPEN) {
                 if (!connections.has(ws)) {
@@ -19,4 +19,7 @@ export function setWsHeartbeat(wss: WebSocket.Server, pong: (ws: WebSocket, data
         }
         connections.clear();
     }, pingTimeout);
+    wss.addListener("close", () => {
+        clearInterval(handle)
+    })
 }
