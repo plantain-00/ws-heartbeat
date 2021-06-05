@@ -1,6 +1,5 @@
 [![Dependency Status](https://david-dm.org/plantain-00/ws-heartbeat.svg)](https://david-dm.org/plantain-00/ws-heartbeat)
 [![devDependency Status](https://david-dm.org/plantain-00/ws-heartbeat/dev-status.svg)](https://david-dm.org/plantain-00/ws-heartbeat#info=devDependencies)
-[![Build Status](https://travis-ci.org/plantain-00/ws-heartbeat.svg?branch=master)](https://travis-ci.org/plantain-00/ws-heartbeat)
 [![npm version](https://badge.fury.io/js/ws-heartbeat.svg)](https://badge.fury.io/js/ws-heartbeat)
 [![Downloads](https://img.shields.io/npm/dm/ws-heartbeat.svg)](https://www.npmjs.com/package/ws-heartbeat)
 
